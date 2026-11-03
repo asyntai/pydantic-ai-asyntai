@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pydantic-ai-asyntai"
+version = "0.1.0"
+description = "Pydantic AI capability for Asyntai: give your agent a whole website's knowledge, chats and leads"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Asyntai", email = "hello@asyntai.com" }]
+keywords = ["pydantic-ai", "pydantic", "agents", "capability", "asyntai", "rag", "chatbot", "website", "leads"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: Pydantic",
+    "Framework :: Pydantic :: 2",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "pydantic-ai-slim>=1.75.0",
+    "httpx>=0.27.0",
+]
+
+[project.urls]
+Homepage = "https://asyntai.com/documentation/integrations/pydantic-ai/"
+Documentation = "https://asyntai.com/documentation/integrations/pydantic-ai/"
+Source = "https://github.com/asyntai/pydantic-ai-asyntai"
+
+[project.optional-dependencies]
+test = ["pytest>=8.0", "anyio>=4.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["pydantic_ai_asyntai"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
